@@ -22,7 +22,17 @@
 <script src="https://unpkg.com/vditor/dist/index.min.js"></script>
 <script>
     (()=> {
-        $.get('/markdown/读《css世界》补充小知识.md', res => {
+        let routeParams = new Map()
+        location
+            .search
+            .slice(1)
+            .split('&')
+            .map(param => param.split('='))
+            .forEach(([key, value]) => {
+                routeParams.set(key, value)
+            })
+        
+        $.get(`/markdown/&{routeParams.get('article')}.md`, res => {
             Vditor.preview(document.querySelector('#vditor'), res, {
                 theme: { current: 'dark' },
                 speech: { enable: true }
