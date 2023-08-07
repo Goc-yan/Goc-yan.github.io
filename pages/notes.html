@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=(false)">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vditor/dist/index.css" />
     <link rel="stylesheet" href="./assets/styles/home.css" />
     <style>
         .container {
@@ -16,10 +15,19 @@
 </head>
 <body>
     <div class="container">
-        notes
+        <div id="vditor" class="vditor" style="padding: 30px; border: none; margin-top: 30px"></div>
     </div>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://unpkg.com/vditor/dist/index.min.js"></script>
 <script>
-
+    (()=> {
+        $.get('./markdown/读《css世界》补充小知识.md', res => {
+            Vditor.preview(document.querySelector('#vditor'), res, {
+                theme: { current: 'dark' },
+                speech: { enable: true }
+            })
+        })
+    })()
 </script>
 </html>
