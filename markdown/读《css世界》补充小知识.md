@@ -6,11 +6,10 @@
     content: '';
 }
 ```
-***
 
 ```css
 // loading...
-<dot>...</dot>
+// html: <dot>...</dot>
 dot {
     display: inline-block; 
     height: 1em;
@@ -30,13 +29,11 @@ dot::before {
     66% { transform: translateY(-1em); }
 }
 ```
-***
 
 ```javascript
 // 切换样式：
 dom.classList.toggle('colspan')
 ```
-***
 
 ```css
 // 利用margin-left: auto 实现dom右对齐
