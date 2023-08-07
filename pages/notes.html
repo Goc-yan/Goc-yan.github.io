@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/vditor/dist/index.css" />
-    <link rel="stylesheet" href="./assets/styles/home.css" />
+    <link rel="stylesheet" href="/assets/styles/home.css" />
     <style>
         .container {
             width: 800px;
@@ -22,7 +22,7 @@
 <script src="https://unpkg.com/vditor/dist/index.min.js"></script>
 <script>
     (()=> {
-        $.get('./markdown/读《css世界》补充小知识.md', res => {
+        $.get('/markdown/读《css世界》补充小知识.md', res => {
             Vditor.preview(document.querySelector('#vditor'), res, {
                 theme: { current: 'dark' },
                 speech: { enable: true }
