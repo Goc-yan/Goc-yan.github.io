@@ -34,7 +34,6 @@
         
         $.get(`/markdown/${routeParams.get('article')}.md`, res => {
             Vditor.preview(document.querySelector('#vditor'), res, {
-                theme: { current: 'dark' },
                 speech: { enable: true }
             })
         })
